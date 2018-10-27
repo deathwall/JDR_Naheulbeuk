@@ -45,13 +45,21 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
         
+        <!-- DATA : MONGO DB -->
+        <dependency>
+        	<groupId>org.mongodb</groupId>
+        	<artifactId>mongodb-driver-sync</artifactId>
+        	<version>3.8.2</version>
+   		</dependency>
+        
+        <!-- UTILS -->
         <dependency>
 		    <groupId>org.projectlombok</groupId>
 		    <artifactId>lombok</artifactId>
 		    <optional>true</optional>
 		    <version>${lombok.version}</version>
 		</dependency>
-        
+		
 	</dependencies>
 
 	<build>
