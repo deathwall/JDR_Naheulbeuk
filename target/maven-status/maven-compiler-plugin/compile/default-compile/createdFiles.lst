@@ -1,0 +1,4 @@
+com\forfun\jdr\naheulbeuk\model\Person.class
+com\example\demo\JdrNaheulbeukApplication.class
+com\forfun\jdr\naheulbeuk\controller\IndexController.class
+com\forfun\jdr\naheulbeuk\form\PersonForm.class
