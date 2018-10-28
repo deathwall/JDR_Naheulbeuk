@@ -15,8 +15,6 @@ public class PlayerService {
 	PlayerRepository playerRepository;
 	
 	public Collection<Player> getAllPlayers(){
-		
-		playerRepository.findAll().forEach(p -> System.out.println(p.getFirstName()));
 		return playerRepository.findAll();
 	}
 	

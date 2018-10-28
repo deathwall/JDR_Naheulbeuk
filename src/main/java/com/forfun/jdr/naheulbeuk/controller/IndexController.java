@@ -4,14 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.forfun.jdr.naheulbeuk.form.PlayerForm;
 import com.forfun.jdr.naheulbeuk.model.Player;
 import com.forfun.jdr.naheulbeuk.service.PlayerService;
  
@@ -25,16 +22,11 @@ public class IndexController {
     @Autowired
     PlayerService playerService;
  
-    @Value("${welcome.message}")
-    private String message;
- 
-    
     //*********** MAPPING ***************
     
     @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
     public String index(Model model) {
     	persons.addAll(playerService.getAllPlayers());
-        model.addAttribute("message", message);
         return "index";
     }
  
@@ -44,27 +36,6 @@ public class IndexController {
         model.addAttribute("persons", persons);
  
         return "personList";
-    }
- 
-    @RequestMapping(value = { "/addPerson" }, method = RequestMethod.GET)
-    public String showAddPersonPage(Model model) {
- 
-        PlayerForm personForm = new PlayerForm();
-        model.addAttribute("personForm", personForm);
- 
-        return "addPerson";
-    }
- 
-    @RequestMapping(value = { "/addPerson" }, method = RequestMethod.POST)
-    public String savePerson(Model model, @ModelAttribute("personForm") PlayerForm personForm) {
- 
-        String firstName = personForm.getFirstName();
-        String lastName = personForm.getLastName();
- 
-        Player newPerson = new Player(firstName, lastName);
-        persons.add(newPerson);
-
-        return "redirect:/personList";
     }
  
 }

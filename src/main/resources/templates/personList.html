@@ -9,17 +9,47 @@
    
    <body>
       <h1>Person List</h1>
-      <a href="addPerson">Add Person</a>
-      <br/><br/>
       <div>
          <table border="1">
             <tr>
-               <th>First Name</th>
-               <th>Last Name</th>
+               <th>nom</th>
+               <th>personnage</th>
+               <th>energie vitale</th>
+               <th>energie astrale</th>
+               <th>or</th>
+               <th>attaque</th>
+               <th>parade</th>
+               <th>niveau</th>
+               <th>experience</th>
+               <th>courage</th>
+               <th>intelligence</th>
+               <th>charisme</th>
+               <th>adresse</th>
+               <th>force</th>
+               <th>origine</th>
+               <th>metier</th>
+               <th>sexe</th>
+               <th>destin</th>
             </tr>
             <tr th:each ="person : ${persons}">
-               <td th:utext="${person.firstName}">...</td>
-               <td th:utext="${person.lastName}">...</td>
+               <td th:utext="${person.nom}">...</td>
+               <td th:utext="${person.perso}">...</td>
+               <td th:utext="${person.ev}">...</td>
+               <td th:utext="${person.ea}">...</td>
+               <td th:utext="${person.or}">...</td>
+               <td th:utext="${person.attaque}">...</td>
+               <td th:utext="${person.parade}">...</td>
+               <td th:utext="${person.niveau}">...</td>
+               <td th:utext="${person.experience}">...</td>
+               <td th:utext="${person.courage}">...</td>
+               <td th:utext="${person.intelligence}">...</td>
+               <td th:utext="${person.charisme}">...</td>
+               <td th:utext="${person.adresse}">...</td>
+               <td th:utext="${person.force}">...</td>
+               <td th:utext="${person.origine}">...</td>
+               <td th:utext="${person.metier}">...</td>
+               <td th:utext="${person.sexe}">...</td>
+               <td th:utext="${person.destin}">...</td>
             </tr>
          </table>
       </div>
