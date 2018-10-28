@@ -1,4 +1,7 @@
-com\forfun\jdr\naheulbeuk\model\Person.class
-com\example\demo\JdrNaheulbeukApplication.class
+com\forfun\jdr\naheulbeuk\data\PlayerRepository.class
 com\forfun\jdr\naheulbeuk\controller\IndexController.class
-com\forfun\jdr\naheulbeuk\form\PersonForm.class
+com\forfun\jdr\main\JdrNaheulbeukApplication.class
+com\forfun\jdr\naheulbeuk\service\PlayerService.class
+com\forfun\jdr\naheulbeuk\form\PlayerForm.class
+com\forfun\jdr\config\DatabaseConfiguration.class
+com\forfun\jdr\naheulbeuk\model\Player.class

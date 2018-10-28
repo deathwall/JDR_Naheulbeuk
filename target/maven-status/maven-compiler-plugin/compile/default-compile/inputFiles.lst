@@ -1,4 +1,7 @@
-C:\work\dev\projectFactory\jdrNaheulbeuk\src\main\java\com\forfun\jdr\naheulbeuk\form\PersonForm.java
-C:\work\dev\projectFactory\jdrNaheulbeuk\src\main\java\com\example\demo\JdrNaheulbeukApplication.java
-C:\work\dev\projectFactory\jdrNaheulbeuk\src\main\java\com\forfun\jdr\naheulbeuk\model\Person.java
-C:\work\dev\projectFactory\jdrNaheulbeuk\src\main\java\com\forfun\jdr\naheulbeuk\controller\IndexController.java
+C:\work\dev\projectFactory\JDR\src\main\java\com\forfun\jdr\naheulbeuk\form\PlayerForm.java
+C:\work\dev\projectFactory\JDR\src\main\java\com\forfun\jdr\naheulbeuk\service\PlayerService.java
+C:\work\dev\projectFactory\JDR\src\main\java\com\forfun\jdr\config\DatabaseConfiguration.java
+C:\work\dev\projectFactory\JDR\src\main\java\com\forfun\jdr\main\JdrNaheulbeukApplication.java
+C:\work\dev\projectFactory\JDR\src\main\java\com\forfun\jdr\naheulbeuk\data\PlayerRepository.java
+C:\work\dev\projectFactory\JDR\src\main\java\com\forfun\jdr\naheulbeuk\model\Player.java
+C:\work\dev\projectFactory\JDR\src\main\java\com\forfun\jdr\naheulbeuk\controller\IndexController.java
