@@ -24,19 +24,58 @@ public class IndexController {
  
     //*********** MAPPING ***************
     
+    /**
+     * Default application mapping
+     * @param model
+     * @return
+     */
     @RequestMapping(value = { "/", "/index" }, method = RequestMethod.GET)
     public String index(Model model) {
-    	persons.clear();
-    	persons.addAll(playerService.getAllPlayers());
-        return "index";
+    	
+    	//content to display = name of the html page in the views repository
+    	model.addAttribute("content", "welcome");
+    	
+    	//default return to the index page
+    	return "index";
     }
  
+    /**
+     * Call from menu bar, choose to diplay the characters division
+     * @param model, map containing all the data accessible from the view
+     * @return String, name of the view to call, index by default
+     */
     @RequestMapping(value = { "/personList" }, method = RequestMethod.GET)
     public String personList(Model model) {
- 
+    	
+    	//content to display = name of the html page in the views repository
+    	model.addAttribute("content", "personList");
+    	
+    	//model feeding for the targeted page
+    	if (persons.isEmpty()) {
+    		persons.addAll(playerService.getAllPlayers());
+    	}
         model.addAttribute("persons", persons);
- 
-        return "personList";
+        
+        //default return to the index page
+        return "index";
+    }
+    
+    /**
+     * Call from menu bar, choose to diplay the story division
+     * @param model, map containing all the data accessible from the view
+     * @return String, name of the view to call, index by default
+     */
+    @RequestMapping(value = { "/story" }, method = RequestMethod.GET)
+    public String story(Model model) {
+    	
+    	//content to display = name of the html page in the views repository
+    	model.addAttribute("content", "story");
+    	
+    	//model feeding for the targeted page
+
+    	
+        //default return to the index page
+        return "index";
     }
  
 }

@@ -11,23 +11,32 @@ public class Player {
 	
     private String nom;
     private String perso;
-    private String ev;
-    private String ea;
-    private String or;
-    private String attaque;
-    private String parade;
-    private String niveau;
-    private String experience;
-    private String courage;
-    private String intelligence;
-    private String charisme;
-    private String adresse;
-    private String force;
+    private int evMax;
+    private int ev;
+    private int eaMax;
+    private int ea;
+    private int or;
+    private int attaque;
+    private int parade;
+    private int niveau;
+    private int experience;
+    private int courage;
+    private int intelligence;
+    private int charisme;
+    private int adresse;
+    private int force;
     private String origine;
     private String metier;
     private String sexe;
-    private String destin;
- 
+    private int destin;
+    private int protectionMax;
+    private int protection;
+    
+    private int resistanceMagique; // (courage + intelligence + force) /3
+    private int magiePhysique; // (intelligence + adresse ) /2
+    private int magiePsychique; // (intelligence + charisme) /2
+    private int esquive; // (epreuve adresse)
+    
     public Player() {}
  
     public Player(String nom, String perso) {
@@ -59,99 +68,115 @@ public class Player {
 		this.perso = perso;
 	}
 
-	public String getEv() {
+	public int getEvMax() {
+		return evMax;
+	}
+
+	public void setEvMax(int evMax) {
+		this.evMax = evMax;
+	}
+
+	public int getEv() {
 		return ev;
 	}
 
-	public void setEv(String ev) {
+	public void setEv(int ev) {
 		this.ev = ev;
 	}
 
-	public String getEa() {
+	public int getEaMax() {
+		return eaMax;
+	}
+
+	public void setEaMax(int eaMax) {
+		this.eaMax = eaMax;
+	}
+
+	public int getEa() {
 		return ea;
 	}
 
-	public void setEa(String ea) {
+	public void setEa(int ea) {
 		this.ea = ea;
 	}
 
-	public String getOr() {
+	public int getOr() {
 		return or;
 	}
 
-	public void setOr(String or) {
+	public void setOr(int or) {
 		this.or = or;
 	}
 
-	public String getAttaque() {
+	public int getAttaque() {
 		return attaque;
 	}
 
-	public void setAttaque(String attaque) {
+	public void setAttaque(int attaque) {
 		this.attaque = attaque;
 	}
 
-	public String getParade() {
+	public int getParade() {
 		return parade;
 	}
 
-	public void setParade(String parade) {
+	public void setParade(int parade) {
 		this.parade = parade;
 	}
 
-	public String getNiveau() {
+	public int getNiveau() {
 		return niveau;
 	}
 
-	public void setNiveau(String niveau) {
+	public void setNiveau(int niveau) {
 		this.niveau = niveau;
 	}
 
-	public String getExperience() {
+	public int getExperience() {
 		return experience;
 	}
 
-	public void setExperience(String experience) {
+	public void setExperience(int experience) {
 		this.experience = experience;
 	}
 
-	public String getCourage() {
+	public int getCourage() {
 		return courage;
 	}
 
-	public void setCourage(String courage) {
+	public void setCourage(int courage) {
 		this.courage = courage;
 	}
 
-	public String getIntelligence() {
+	public int getIntelligence() {
 		return intelligence;
 	}
 
-	public void setIntelligence(String intelligence) {
+	public void setIntelligence(int intelligence) {
 		this.intelligence = intelligence;
 	}
 
-	public String getCharisme() {
+	public int getCharisme() {
 		return charisme;
 	}
 
-	public void setCharisme(String charisme) {
+	public void setCharisme(int charisme) {
 		this.charisme = charisme;
 	}
 
-	public String getAdresse() {
+	public int getAdresse() {
 		return adresse;
 	}
 
-	public void setAdresse(String adresse) {
+	public void setAdresse(int adresse) {
 		this.adresse = adresse;
 	}
 
-	public String getForce() {
+	public int getForce() {
 		return force;
 	}
 
-	public void setForce(String force) {
+	public void setForce(int force) {
 		this.force = force;
 	}
 
@@ -179,12 +204,65 @@ public class Player {
 		this.sexe = sexe;
 	}
 
-	public String getDestin() {
+	public int getDestin() {
 		return destin;
 	}
 
-	public void setDestin(String destin) {
+	public void setDestin(int destin) {
 		this.destin = destin;
 	}
- 
+
+	public int getProtectionMax() {
+		return protectionMax;
+	}
+
+	public void setProtectionMax(int protectionMax) {
+		this.protectionMax = protectionMax;
+	}
+
+	public int getProtection() {
+		return protection;
+	}
+
+	public void setProtection(int protection) {
+		this.protection = protection;
+	}
+
+	// (courage + intelligence + force) /3
+	public int getResistanceMagique() {
+		return Math.round((intelligence + courage +force)/3);
+	}
+
+	public void setResistanceMagique(int resistanceMagique) {
+		this.resistanceMagique = resistanceMagique;
+	}
+
+	// magiePhysique(intelligence + adresse ) /2
+	public int getMagiePhysique() {
+		return Math.round((intelligence + adresse)/2);
+	}
+
+	public void setMagiePhysique(int magiePhysique) {
+		this.magiePhysique = magiePhysique;
+	}
+
+	// magiePsychique (intelligence + charisme) /2
+	public int getMagiePsychique() {
+		return Math.round((intelligence + charisme)/2) ;
+	}
+
+	public void setMagiePsychique(int magiePsychique) {
+		this.magiePsychique = magiePsychique;
+	}
+
+	// esquive (epreuve adresse)
+	public int getEsquive() {
+		return adresse;
+	}
+
+	public void setEsquive(int esquive) {
+		this.esquive = esquive;
+	}
+
+	
 }
