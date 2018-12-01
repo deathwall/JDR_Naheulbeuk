@@ -1,11 +1,56 @@
-h1 {
-    color:#99a3b2;
+/**** COMMON ****/
+
+/* Default background */
+body {
+	color: #000000;
 }
- 
+
+.rgba-gradient {
+  background: -moz-linear-gradient(90deg, rgba(230, 255, 242, 0.6), rgba(230, 242, 255, 0.69) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(230, 255, 242, 0.6), rgba(230, 242, 255, 0.69) 100%);
+  background: linear-gradient(to 90deg, rgba(230, 255, 242, 0.6), rgba(230, 242, 255, 0.69) 100%);
+}
+
+footer {
+	margin-top: 20px;
+}
+
+/* table */
 table {
     border-collapse: collapse;
 }
- 
+
 table th, table td {
     padding: 5px;
+}
+
+/**** CUSTOM ****/
+
+/* header fragment */
+.menuButton {
+	margin-right: 10px;
+	background-color: #b3e6ff;
+}
+
+/* story view */
+.done-story {
+	background: -moz-linear-gradient(45deg, rgba(204, 255, 153, 0.6), rgba(230, 255, 242, 0.69) 100%);
+  	background: -webkit-linear-gradient(45deg, rgba(204, 255, 153, 0.6), rgba(230, 255, 242, 0.69) 100%);
+  	background: linear-gradient(to 45deg, rgba(204, 255, 153, 0.6), rgba(230, 255, 242, 0.69) 100%);
+	border:1px solid #b3ffe0;
+}
+
+.open-story {
+	background: -moz-linear-gradient(45deg, rgba(179, 230, 255, 0.6), rgba(230, 242, 255, 0.69) 100%);
+  	background: -webkit-linear-gradient(45deg, rgba(179, 230, 255, 0.6), rgba(230, 242, 255, 0.69) 100%);
+  	background: linear-gradient(to 45deg, rgba(179, 230, 255, 0.6), rgba(230, 242, 255, 0.69) 100%);
+	border:1px solid #99ddff;
+}
+
+.quest-title-done{
+	color: #009900;
+}
+
+.quest-title-ongoing{
+	color: #0066ff;
 }
