@@ -24,6 +24,10 @@ table th, table td {
     padding: 5px;
 }
 
+.card {
+	margin-bottom: 20px;
+}
+
 /**** CUSTOM ****/
 
 /* header fragment */
@@ -54,3 +58,56 @@ table th, table td {
 .quest-title-ongoing{
 	color: #0066ff;
 }
+
+/* player view */
+
+.player-cell{
+	background-color: #b3d9ff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.stat-cell{
+	background-color: #c1c1d7;
+	font-weight: bold;
+}
+
+.value-cell{
+	background-color: #c1c1d7;
+	font-weight: bold;
+	text-align: center;
+}
+
+.info-cell{
+	background-color: #d0d0e1;
+}
+
+.ev-cell {
+	background-color: #66ff66;
+	text-align: center;
+	font-weight: bold;
+}
+
+.ea-cell {
+	background-color: #4da6ff;
+	text-align: center;
+	font-weight: bold;
+}
+
+.level-cell {
+	background-color: #e0e0eb;
+	text-align: center;
+	font-weight: bold;
+}
+
+.money-cell{
+	background-color: #ffff80;
+	font-weight: bold;
+}
+
+.money-cell-value{
+	background-color: #ffff80;
+	text-align: center;
+	font-weight: bold;
+}	
+

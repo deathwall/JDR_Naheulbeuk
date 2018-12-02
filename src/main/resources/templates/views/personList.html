@@ -18,62 +18,132 @@
 			
 			<!-- view dynamic generation -->
 			<div class="tab-content" id="myTabContent">
-				<div th:each ="person : ${persons}" class="tab-pane fade" th:id="${person.nom}" role="tabpanel" th:aria-labelledby="${person.nom} + '-tab' " th:utext="${person.nom}">...</div>
+			
+				<!-- tab for each player -->
+				<div th:each ="person : ${persons}" class="tab-pane fade" th:id="${person.nom}" role="tabpanel" th:aria-labelledby="${person.nom} + '-tab' ">
+					
+					<br/>
+					<div class="container-fluid">
+						
+						<!-- |PLAYER| |STAT	|VALUE 	|INFO		| -->
+						<!-- |X|X	|-|X	|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-1 player-cell" th:utext="${person.perso}"></div>
+							 <div class="col-1 player-cell" th:utext="'Destin : '+ ${person.destin}"></div>
+							 <div class="col-1 empty-cell"></div>
+							 <div class="col-1 stat-cell">courage</div>
+							 <div class="col-1 value-cell" th:utext="${person.courage}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |PLAYER| |STAT	|VALUE 	|INFO		| -->
+						<!-- |X|X	|-|X	|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-2 player-cell" th:utext="${person.origine}"></div>
+							 <div class="col-1 empty-cell"></div>
+							 <div class="col-1 stat-cell">intelligence</div>
+							 <div class="col-1 value-cell" th:utext="${person.intelligence}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |PLAYER| |STAT		VALUE 	|INFO		| -->
+						<!-- |X|X	|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-2 player-cell" th:utext="${person.metier}"></div>
+							 <div class="col-1 empty-cell"></div>
+							 <div class="col-1 stat-cell">charisme</div>
+							 <div class="col-1 value-cell" th:utext="${person.charisme}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |	   |STAT	|VALUE 	|INFO		| -->
+						<!-- |-|-|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-3 empty-cell"></div>
+							 <div class="col-1 stat-cell">adresse</div>
+							 <div class="col-1 value-cell" th:utext="${person.adresse}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |EV    | |STAT		|VALUE 	|INFO		| -->
+						<!-- |X|X	|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-2 ev-cell" th:utext="${person.ev + '/' + person.evMax}"></div>
+							 <div class="col-1 empty-cell"></div>
+							 <div class="col-1 stat-cell">force</div>
+							 <div class="col-1 value-cell" th:utext="${person.force}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |	   |STAT	|VALUE 	|INFO		| -->
+						<!-- |-|-|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-3 empty-cell"></div>
+							 <div class="col-1 stat-cell">esquive</div>
+							 <div class="col-1 value-cell" th:utext="${person.esquive}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |EA    | |STAT		|VALUE 	|INFO		| -->
+						<!-- |X|X	|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-2 ea-cell" th:utext="${person.ea + '/' + person.eaMax}"></div>
+							 <div class="col-1 empty-cell"></div>
+							 <div class="col-1 stat-cell">attaque</div>
+							 <div class="col-1 value-cell" th:utext="${person.attaque}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |	   |STAT	|VALUE 	|INFO		| -->
+						<!-- |-|-|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-3 empty-cell"></div>
+							 <div class="col-1 stat-cell">parade</div>
+							 <div class="col-1 value-cell" th:utext="${person.parade}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |NV    | |STAT		|VALUE 	|INFO		| -->
+						<!-- |X|X	|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-2 level-cell" th:utext="'NV ' + ${person.niveau} + ' : ' + ${person.experience} + '/100'"></div>
+							 <div class="col-1 empty-cell"></div>
+							 <div class="col-1 stat-cell">resi magique</div>
+							 <div class="col-1 value-cell" th:utext="${person.resistanceMagique}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |	   |STAT	|VALUE 	|INFO		| -->
+						<!-- |-|-|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-3 empty-cell"></div>
+							 <div class="col-1 stat-cell">magie PHY</div>
+							 <div class="col-1 value-cell" th:utext="${person.magiePhysique}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |OR    | |STAT		|VALUE 	|INFO		| -->
+						<!-- |X|X	|-|X		|X 		|X|X|X|X|X|X| -->
+						<div class="row">
+							 <div class="col-1 money-cell">pieces OR</div>
+							 <div class="col-1 money-cell-value" th:utext="${person.or}"></div>
+							 <div class="col-1 empty-cell"></div>
+							 <div class="col-1 stat-cell">magie PSY</div>
+							 <div class="col-1 value-cell" th:utext="${person.magiePsychique}"></div>
+							 <div class="col-7 info-cell"> ??? </div>
+						</div>
+						
+						<!-- |OR |					 | -->
+						<!-- |X|X|-|-|-|-|-|-|-|-|-|-| -->
+						<div class="row">
+							 <div class="col-1 money-cell">pieces ARGENT</div>
+							 <div class="col-1 money-cell-value" th:utext="${person.argent}"></div>
+							 <div class="col-10 empty-cell"></div>
+						</div>
+		      		</div>
+				</div>
 			</div>
 			
-	      	<div>
-	         	<table border="1">
-	            	<tr>
-						<th>nom</th>
-		               	<th>personnage</th>
-		               	<th>energie vitale</th>
-		               	<th>energie astrale</th>
-		               	<th>or</th>
-		               	<th>attaque</th>
-		               	<th>parade</th>
-		               	<th>niveau</th>
-		               	<th>experience</th>
-		               	<th>courage</th>
-		               	<th>intelligence</th>
-		               	<th>charisme</th>
-		               	<th>adresse</th>
-		               	<th>esquive</th>
-		               	<th>resistance magique</th>
-		               	<th>magie physique</th>
-		               	<th>magie psychique</th>
-		               	<th>force</th>
-		               	<th>origine</th>
-		               	<th>metier</th>
-		               	<th>sexe</th>
-		               	<th>destin</th>
-	            	</tr>
-	            	<tr th:each ="person : ${persons}">
-	               		<td th:utext="${person.nom}">...</td>
-		               	<td th:utext="${person.perso}">...</td>
-		               	<td th:utext="${person.ev + '/' + person.evMax}">...</td>
-		               	<td th:utext="${person.ea + '/' + person.eaMax}">...</td>
-		               	<td th:utext="${person.or}">...</td>
-		               	<td th:utext="${person.attaque}">...</td>
-		               	<td th:utext="${person.parade}">...</td>
-		               	<td th:utext="${person.niveau}">...</td>
-		               	<td th:utext="${person.experience}">...</td>
-		               	<td th:utext="${person.courage}">...</td>
-		               	<td th:utext="${person.intelligence}">...</td>
-		               	<td th:utext="${person.charisme}">...</td>
-		               	<td th:utext="${person.adresse}">...</td>
-		               	<td th:utext="${person.esquive}">...</td>
-		               	<td th:utext="${person.resistanceMagique}">...</td>
-		               	<td th:utext="${person.magiePhysique}">...</td>
-		               	<td th:utext="${person.magiePsychique}">...</td>
-		               	<td th:utext="${person.force}">...</td>
-		               	<td th:utext="${person.origine}">...</td>
-		               	<td th:utext="${person.metier}">...</td>
-		               	<td th:utext="${person.sexe}">...</td>
-		               	<td th:utext="${person.destin}">...</td>
-	            	</tr>
-	      		</table>
-	      	</div>
-	      
 	   </div>
    </body>
 </html>

@@ -16,6 +16,7 @@ public class Player {
     private int eaMax;
     private int ea;
     private int or;
+    private int argent;
     private int attaque;
     private int parade;
     private int niveau;
@@ -264,5 +265,12 @@ public class Player {
 		this.esquive = esquive;
 	}
 
-	
+	public int getArgent() {
+		return argent;
+	}
+
+	public void setArgent(int argent) {
+		this.argent = argent;
+	}
+
 }

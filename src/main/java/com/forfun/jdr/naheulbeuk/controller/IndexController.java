@@ -51,9 +51,8 @@ public class IndexController {
     	model.addAttribute("content", "personList");
     	
     	//model feeding for the targeted page
-    	if (persons.isEmpty()) {
-    		persons.addAll(playerService.getAllPlayers());
-    	}
+    	persons.clear();
+    	persons.addAll(playerService.getAllPlayers());
         model.addAttribute("persons", persons);
         
         //default return to the index page
