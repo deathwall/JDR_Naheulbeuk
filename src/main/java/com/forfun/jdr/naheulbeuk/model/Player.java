@@ -41,6 +41,7 @@ public class Player {
     private int esquive; // (epreuve adresse)
     
     private List<Competence> competences;
+    private List<Objet> objets;
     
     public Player() {}
  
@@ -285,4 +286,12 @@ public class Player {
 		this.competences = competences;
 	}
 
+	public List<Objet> getObjets() {
+		return objets;
+	}
+
+	public void setObjets(List<Objet> objets) {
+		this.objets = objets;
+	}
+	
 }

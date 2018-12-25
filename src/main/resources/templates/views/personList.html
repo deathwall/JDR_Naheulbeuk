@@ -141,24 +141,70 @@
 							 <div class="col-10 empty-cell"></div>
 						</div>
 						
-						<!-- competence for each player -->
-						<!-- |   |					 | -->
-						<!-- |-|-|X|X|X|X|X||X|X|X|X| -->
-						<div class="row">
-						 	<div class="col-3 empty-cell"></div>
-						 	<div class="col-2 value-cell groove-border" th:utext="Competence"></div>
-						 	<div class="col-4 value-cell groove-border" th:utext="Bonus"></div>
-						 	<div class="col-3 value-cell groove-border" th:utext="Malus"></div>
-						</div>
-						<div th:each ="competence : ${person.competences}" th:id="${competence.id}">
-							<div class="row">
-							 	<div class="col-3 empty-cell"></div>
-							 	<div class="col-2 value-cell-left bold groove-border" th:utext="${competence.nom}"></div>
-							 	<div class="col-4 value-cell-left groove-border" th:utext="${competence.bonus}"></div>
-							 	<div class="col-3 value-cell-left groove-border" th:utext="${competence.malus}"></div>
-							</div>
-						</div>
 						
+						<div id="accordion">
+							
+							<br/>
+							<!-- COMPETENCES PANEL -->
+							<div class="card">
+								<div class="card-header">
+									<a class="card-link" data-toggle="collapse" href="#collapseOne">
+										COMPETENCES
+									 </a>
+				     			 </div>
+				     			 
+				     			 <div id="collapseOne" class="collapse show" data-parent="#accordion">
+     			 					<div class="card-body">
+										<div class="row">
+									 	<div class="col-2 value-cell groove-border bold" th:utext="Competence"></div>
+									 	<div class="col-5 value-cell groove-border bold" th:utext="Bonus"></div>
+									 	<div class="col-5 value-cell groove-border bold" th:utext="Malus"></div>
+									</div>
+									<div th:each ="competence : ${person.competences}" th:id="${competence.id}">
+										<div class="row">
+										 	<div class="col-2 value-cell-left bold groove-border" th:utext="${competence.nom}"></div>
+										 	<div class="col-5 value-cell-left groove-border" th:utext="${competence.bonus}"></div>
+										 	<div class="col-5 value-cell-left groove-border" th:utext="${competence.malus}"></div>
+										</div>
+									</div>
+     			 					</div>
+     			 				</div>
+							</div>
+							<!-- COMPETENCES PANEL END -->
+						
+							<!-- OBJECTS PANEL -->
+							<div class="card">
+								<div class="card-header">
+									<a class="card-link" data-toggle="collapse" href="#collapseTwo">
+										OBJETS
+									 </a>
+				     			 </div>
+				     			 
+				     			 <div id="collapseTwo" class="collapse show" data-parent="#accordion">
+     			 					<div class="card-body">
+										
+										<div class="row">
+										 	<div class="col-2 value-cell groove-border bold" th:utext="Objet"></div>
+										 	<div class="col-5 value-cell groove-border bold" th:utext="Description"></div>
+										 	<div class="col-2 value-cell groove-border bold" th:utext="Bonus"></div>
+										 	<div class="col-2 value-cell groove-border bold" th:utext="Malus"></div>
+										 	<div class="col-1 value-cell groove-border bold" th:utext="Poids"></div>
+										</div>
+										<div th:each ="objet : ${person.objets}" th:id="${objet.id}">
+											<div class="row">
+											 	<div class="col-2 value-cell-left groove-border bold" th:utext="${objet.nom}"></div>
+											 	<div class="col-5 value-cell-left groove-border" th:utext="${objet.description}"></div>
+											 	<div class="col-2 value-cell-left groove-border" th:utext="${objet.bonus}"></div>
+											 	<div class="col-2 value-cell-left groove-border" th:utext="${objet.malus}"></div>
+											 	<div class="col-1 value-cell-left groove-border" th:utext="${objet.poids}"></div>
+											</div>
+										</div>
+     			 					</div>
+     			 				</div>
+							</div>
+							<!-- OBJECTS PANEL END -->
+							
+						</div>
 		      		</div>
 				</div>
 			</div>

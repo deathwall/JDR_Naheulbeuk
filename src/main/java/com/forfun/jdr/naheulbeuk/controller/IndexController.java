@@ -13,6 +13,7 @@ import com.forfun.jdr.naheulbeuk.model.Level;
 import com.forfun.jdr.naheulbeuk.model.Player;
 import com.forfun.jdr.naheulbeuk.service.CompetenceService;
 import com.forfun.jdr.naheulbeuk.service.LevelService;
+import com.forfun.jdr.naheulbeuk.service.ObjetService;
 import com.forfun.jdr.naheulbeuk.service.PlayerService;
  
 @Controller
@@ -31,6 +32,9 @@ public class IndexController {
     
     @Autowired
     LevelService levelService;
+    
+    @Autowired
+    ObjetService objetService;
  
     //*********** MAPPING ***************
     
@@ -50,7 +54,7 @@ public class IndexController {
     }
  
     /**
-     * Call from menu bar, choose to diplay the characters division
+     * Call from menu bar, choose to display the characters division
      * @param model, map containing all the data accessible from the view
      * @return String, name of the view to call, index by default
      */
@@ -67,6 +71,7 @@ public class IndexController {
     	//update the personnage 
     	for (Player player : persons) {
     		player.setCompetences(competenceService.getAllCompetenceforPlayer(player.getPerso()));
+    		player.setObjets(objetService.getAllObjectforPlayer(player.getPerso()));
     	}
     	
         model.addAttribute("persons", persons);
@@ -76,7 +81,7 @@ public class IndexController {
     }
     
     /**
-     * Call from menu bar, choose to diplay the story division
+     * Call from menu bar, choose to display the story division
      * @param model, map containing all the data accessible from the view
      * @return String, name of the view to call, index by default
      */
