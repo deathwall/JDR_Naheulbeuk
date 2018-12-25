@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.forfun.jdr.naheulbeuk.model.Player;
+import com.forfun.jdr.naheulbeuk.service.CompetenceService;
 import com.forfun.jdr.naheulbeuk.service.PlayerService;
  
 @Controller
@@ -21,6 +22,9 @@ public class IndexController {
     
     @Autowired
     PlayerService playerService;
+    
+    @Autowired
+    CompetenceService competenceService;
  
     //*********** MAPPING ***************
     
@@ -53,6 +57,12 @@ public class IndexController {
     	//model feeding for the targeted page
     	persons.clear();
     	persons.addAll(playerService.getAllPlayers());
+    	
+    	//update the personnage 
+    	for (Player player : persons) {
+    		player.setCompetences(competenceService.getAllCompetenceforPlayer(player.getPerso()));
+    	}
+    	
         model.addAttribute("persons", persons);
         
         //default return to the index page

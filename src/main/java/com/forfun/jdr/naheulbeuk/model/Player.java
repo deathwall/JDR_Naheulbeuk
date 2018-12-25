@@ -1,5 +1,7 @@
 package com.forfun.jdr.naheulbeuk.model;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -37,6 +39,8 @@ public class Player {
     private int magiePhysique; // (intelligence + adresse ) /2
     private int magiePsychique; // (intelligence + charisme) /2
     private int esquive; // (epreuve adresse)
+    
+    private List<Competence> competences;
     
     public Player() {}
  
@@ -271,6 +275,14 @@ public class Player {
 
 	public void setArgent(int argent) {
 		this.argent = argent;
+	}
+
+	public List<Competence> getCompetences() {
+		return competences;
+	}
+
+	public void setCompetences(List<Competence> competences) {
+		this.competences = competences;
 	}
 
 }

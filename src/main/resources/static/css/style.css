@@ -28,6 +28,10 @@ table th, table td {
 	margin-bottom: 20px;
 }
 
+.bold{
+	font-weight: bold;
+}
+
 /**** CUSTOM ****/
 
 /* header fragment */
@@ -76,6 +80,11 @@ table th, table td {
 	background-color: #c1c1d7;
 	font-weight: bold;
 	text-align: center;
+}
+
+.value-cell-left{
+	background-color: #c1c1d7;
+	text-align: left;
 }
 
 .info-cell{

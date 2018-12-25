@@ -140,6 +140,25 @@
 							 <div class="col-1 money-cell-value" th:utext="${person.argent}"></div>
 							 <div class="col-10 empty-cell"></div>
 						</div>
+						
+						<!-- competence for each player -->
+						<!-- |   |					 | -->
+						<!-- |-|-|X|X|X|X|X||X|X|X|X| -->
+						<div class="row">
+						 	<div class="col-3 empty-cell"></div>
+						 	<div class="col-2 value-cell" th:utext="Competence"></div>
+						 	<div class="col-4 value-cell" th:utext="Bonus"></div>
+						 	<div class="col-3 value-cell" th:utext="Malus"></div>
+						</div>
+						<div th:each ="competence : ${person.competences}" th:id="${competence.id}">
+							<div class="row">
+							 	<div class="col-3 empty-cell"></div>
+							 	<div class="col-2 value-cell-left bold" th:utext="${competence.nom}"></div>
+							 	<div class="col-4 value-cell-left" th:utext="${competence.bonus}"></div>
+							 	<div class="col-3 value-cell-left" th:utext="${competence.malus}"></div>
+							</div>
+						</div>
+						
 		      		</div>
 				</div>
 			</div>
