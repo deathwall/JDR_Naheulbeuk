@@ -32,6 +32,10 @@ table th, table td {
 	font-weight: bold;
 }
 
+.groove-border {
+	border-style: groove;
+}
+
 /**** CUSTOM ****/
 
 /* header fragment */
@@ -78,12 +82,11 @@ table th, table td {
 
 .value-cell{
 	background-color: #c1c1d7;
-	font-weight: bold;
 	text-align: center;
 }
 
 .value-cell-left{
-	background-color: #c1c1d7;
+	background-color: #d0d0e1;
 	text-align: left;
 }
 

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+   	<head>
+    	<meta charset="UTF-8" />
+      	<title>Level</title>
+   	</head>
+   	
+	<body>
+		<div th:fragment="content">
+		
+		<br/>
+		
+			<div class="row">
+			 	<div class="col-1 empty-cell"></div>
+			 	<div class="col-2 value-cell bold groove-border" th:utext="Level"></div>
+			 	<div class="col-4 value-cell bold groove-border" th:utext="Experience"></div>
+			 	<div class="col-4 value-cell bold groove-border" th:utext="TODO"></div>
+			 	<div class="col-1 empty-cell"></div>
+			</div>
+			<div th:each ="level : ${levels}" th:id="${level.id}">
+				<div class="row">
+				 	<div class="col-1 empty-cell"></div>
+				 	<div class="col-2 value-cell groove-border" th:utext="${level.level}"></div>
+				 	<div class="col-4 value-cell groove-border" th:utext="${level.experience}"></div>
+				 	<div class="col-4 value-cell groove-border" th:utext="${level.actions}"></div>
+				 	<div class="col-1 empty-cell"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -9,8 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.forfun.jdr.naheulbeuk.model.Level;
 import com.forfun.jdr.naheulbeuk.model.Player;
 import com.forfun.jdr.naheulbeuk.service.CompetenceService;
+import com.forfun.jdr.naheulbeuk.service.LevelService;
 import com.forfun.jdr.naheulbeuk.service.PlayerService;
  
 @Controller
@@ -19,12 +21,16 @@ public class IndexController {
 	//*********** ATTRIBUTES ***************
 	
     private static List<Player> persons = new ArrayList<Player>();
+    private static List<Level> levels  = new ArrayList<Level>();
     
     @Autowired
     PlayerService playerService;
     
     @Autowired
     CompetenceService competenceService;
+    
+    @Autowired
+    LevelService levelService;
  
     //*********** MAPPING ***************
     
@@ -86,5 +92,29 @@ public class IndexController {
         //default return to the index page
         return "index";
     }
+    
+    /**
+     * Call from menu bar, choose to display level Table
+     * @param model, map containing all the data accessible from the view
+     * @return 
+     */
+    @RequestMapping(value = { "/levels" }, method = RequestMethod.GET)
+    public String level(Model model) {
+    	
+    	//content to display = name of the html page in the views repository
+    	model.addAttribute("content", "levels");
+    	
+    	//model feeding for the targeted page
+    	levels.clear();
+    	levels.addAll(levelService.getAllLevel());
+    	
+    	model.addAttribute("levels", levels);
+    	
+        //default return to the index page
+        return "index";
+    }
+    
+    
+    
  
 }
